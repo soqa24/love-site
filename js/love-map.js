@@ -410,6 +410,7 @@ const gallery = document.getElementById("gallery");
 const screenVideo = document.createElement("video");
 screenVideo.controls = true;
 screenVideo.playsInline = true;
+screenVideo.preload = "none"; // ← не качать видео до нажатия play
 screenVideo.style.maxWidth = "100%";
 screenVideo.style.maxHeight = "60vh";
 screenVideo.style.display = "none";
@@ -427,6 +428,7 @@ function showPhoto(src) {
 function showVideo(src) {
   display.hidden = true;
   screenVideo.style.display = "block";
+  screenVideo.poster = src.replace(/\.mp4$/i, ".jpg");
   screenVideo.src = src;
 }
 
@@ -466,6 +468,9 @@ function openMemory(m) {
     if (item.type === "photo") {
       el = document.createElement("img");
       el.src = srcForDisplay;
+      el.loading = "lazy";       // <-- ЭТО САМОЕ ВАЖНОЕ ДЛЯ СКОРОСТИ
+      el.decoding = "async"; 
+      el.alt = m.title; // описание фото — заголовок воспоминания
     } else {
       // ЭТОТ БЛОК ИСПРАВЛЯЕТ ПРОБЛЕМУ:
       const ytId = getYouTubeId(item.src);
@@ -474,29 +479,19 @@ function openMemory(m) {
         // YouTube: берем готовый постер с серверов Google
         el = document.createElement("img");
         el.src = `https://img.youtube.com/vi/\${ytId}/hqdefault.jpg`;
+          el.loading = "lazy";
       } else {
-        // Локальное видео (.mp4): НЕ создаем тег <video> для миниатюры!
-        // Создаем <img> и пытаемся взять кадр.
-        // ВАРИАНТ 1 (Простой): Если у вас есть картинки-превью, положите их рядом с видео
-        // и меняйте расширение на .jpg. Но если их нет, используем хитрость:
+  
 
         el = document.createElement("img");
 
-        // ХИТРОСТЬ: Мы не можем программно взять кадр из видео без сложной логики Canvas.
-        // Поэтому самый надежный вариант для вашего проекта:
-        // 1. Либо вручную сделайте скриншоты из видео и положите их в папку photos (или рядом).
-        // 2. Либо (если лень делать скриншоты) просто поставьте заглушку-иконку видео.
-
-        // Вариант с иконкой "Play" (чтобы пользователь понял, что это видео):
         el.src =
+        el.loading = "lazy";
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E";
         el.style.background = "#333"; // Темный фон под треугольником
         el.style.objectFit = "contain";
         el.style.padding = "10px";
-
-        // Если вы хотите, чтобы там было реальное фото из видео, вам нужно вручную
-        // сохранить 1 кадр из видео как картинку (например, first-dance-thumb.jpg)
-        // и прописать путь сюда. Автоматически JS этого не сделает надежно во всех браузерах.
+        
       }
     }
 
