@@ -1,7 +1,7 @@
 .slider-camera {
   display: grid;
   place-items: center;
-  background-image: url(../../images/background/bg-no-hearts.png);
+  background-image: url(../images/background/bg-no-hearts.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
