@@ -22,10 +22,8 @@ const memories = [
     story:
       "Я немного волновался, но после нашего поцелуя этот вечер я вспоминаю каждый день)",
        photos: [
-      `${BASE}images/map/id1/id1.1.jpg`,
-      `${BASE}images/map/id1/id1.2.jpg`,
+        "./images/map/id1/id1.1.jpg",
     ],
-    videos: [`${BASE}video/first-dance.mp4`],
   },
   {
     id: 2,

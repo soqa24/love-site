@@ -1,9 +1,10 @@
-const heartUrls = [
-  '/images/hearts/heart-small.svg',
-  '/images/hearts/heart-outline.svg',
-  '/images/hearts/heart-glow.svg',
-  '/images/hearts/heart-filled.svg',
+const BASE = '/love-site/';
 
+const heartUrls = [
+  `${BASE}images/hearts/heart-small.svg`,
+  `${BASE}images/hearts/heart-outline.svg`,
+  `${BASE}images/hearts/heart-glow.svg`,
+  `${BASE}images/hearts/heart-filled.svg`,
 ];
 
 const count = 30;
