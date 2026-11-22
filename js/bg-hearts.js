@@ -1,10 +1,11 @@
-const BASE = '/love-site/';
+
+const BASE = import.meta.env.BASE_URL;
 
 const heartUrls = [
-  `\${BASE}images/hearts/heart-small.svg`,
-  `\${BASE}images/hearts/heart-outline.svg`,
-  `\${BASE}images/hearts/heart-glow.svg`,
-  `\${BASE}images/hearts/heart-filled.svg`,
+  `${BASE}images/hearts/heart-small.svg`,
+  `${BASE}images/hearts/heart-outline.svg`,
+  `${BASE}images/hearts/heart-glow.svg`,
+  `${BASE}images/hearts/heart-filled.svg`,
 ];
 
 const count = 30;
