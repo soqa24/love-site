@@ -1,0 +1,216 @@
+.slider-camera {
+  display: grid;
+  place-items: center;
+  background-image: url(../../images/background/bg-no-hearts.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 150px 0 100px;
+  position: relative;
+}
+/* пластинка */
+.slider-camera-plate {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translate(-50%, -50%);
+
+  width: 450px;   /* было 300px — теперь совпадает с пластинкой */
+  height: 450px;
+
+  z-index: 2;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.slider-camera-plate-vinyl {
+  /* Центрируем пластинку относительно родителя .slider-camera */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* ВАЖНО: Задайте фиксированный размер или относительный, но с сохранением пропорций */
+  height: 350px;
+
+  display: block;
+  /* Анимация: 10 секунд на оборот, линейно (без ускорений), бесконечно */
+  animation: spin 10s linear infinite;
+  pointer-events: none; /* Чтобы вращающаяся картинка не перехватывала клики */
+  z-index: 0;
+}
+.slider-camera-plate-vinyl img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ------------------------------*/
+.slider-camera .container-slider {
+  width: min(720px, 90vw);
+}
+.swiper-wrapper {
+  padding: 20px 0;
+}
+.camera-body {
+  background: var(--panel);
+  border: 1px solid rgba(255, 170, 190, 0.35);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.6),
+    0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.camera-screen {
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  width: 46%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Полароид */
+.polaroid {
+  width: 100%;
+  padding: 10px 10px 26px;
+  background: linear-gradient(#f3ddd6, #e8c9c2);
+  border-radius: 6px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s ease;
+}
+.polaroid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.swiper-slide:nth-child(odd) .polaroid {
+  transform: rotate(-4deg);
+}
+.swiper-slide:nth-child(even) .polaroid {
+  transform: rotate(3deg);
+}
+
+.swiper-slide-active .polaroid {
+  transform: rotate(0deg) translateY(-6px) scale(1.02);
+}
+
+.camera-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  gap: 14px;
+  padding: 8px 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+  margin-left: 8px;
+}
+.dots span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #e8a9b4;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 170, 190, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f0c6cf;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nav-btn:hover {
+  background: rgba(255, 170, 190, 0.12);
+}
+
+.film-progress {
+  position: relative;
+  flex: 1;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #f0a9b8 0 14px,
+    transparent 14px 20px
+  );
+  opacity: 0.35;
+}
+.film-progress__fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #ffb3c2 0 14px,
+    transparent 14px 20px
+  );
+  transform-origin: left;
+  transform: scaleX(0);
+  opacity: 1;
+}
+
+.round-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 170, 190, 0.5);
+  background: transparent;
+  color: #f0c6cf;
+  cursor: pointer;
+}
+
+.pause-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 170, 190, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f0c6cf;
+  font:
+    600 12px/1 "Georgia",
+    serif;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+.camera-caption {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
+  padding: 0 8px;
+  color: #f3d9de;
+  font:
+    600 13px/1 "Georgia",
+    serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}

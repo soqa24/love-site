@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap");
+@import "./css/moduls/header.css";
+@import "./css/moduls/bg-hearts.css";
+@import "./css/fonts.css";
+@import "./css/moduls/burger.css";
+@import "./css/moduls/slider-camera.css";
+@import "./css/moduls/love-facts.css";
+@import "./css/moduls/letter-future.css";
+@import "./css/meadia/hero.css";
+
+:root {
+  --bg: #130809;
+  --panel: #210e12;
+  --pink: #f18b9a;
+  --soft: #dca0a5;
+  --line: #69313b;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  color: #f9e8e8;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  overflow-x: clip;
+}
+section,
+.wrapper {
+  width: 100%;
+}
+.map {
+  background: #130809;
+  padding: 0;
+}
+.map::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 30%;
+  border-radius: 50%;
+  width: 551px;
+  height: 551px;
+  background-color: var(--line);
+  opacity: 0.4;
+  filter: blur(220px);
+  z-index: 10;
+}
+@media (max-width: 800px) {
+.map::after {
+    left: 3%;
+  }
+}
+@media (max-width: 576px) {
+.map::after {
+    width: 250px;
+    height: 250px;
+  }
+}
+.container {
+  max-width: 1385px;
+  margin: auto;
+  /* padding: 30px 24px 34px; */
+  padding: 0 30px;
+  position: relative;
+}
+.map__top {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff12;
+}
+.brand {
+  font:
+    italic 28px "Cormorant Garamond",
+    serif;
+  color: #ffd4da;
+  text-decoration: none;
+}
+.map__top span {
+  color: #b98b91;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: var(--pink);
+  margin-top: 10px;
+}
+h1 {
+  font:
+    500 clamp(38px, 5vw, 68px)/0.98 "Cormorant Garamond",
+    serif;
+  margin: 14px 0;
+}
+h1 em {
+  color: #f18b9a;
+}
+.intro > p:last-child {
+  color: #b9959a;
+  font-size: 14px;
+}
+.map-shell {
+  position: relative;
+  border: 1px solid #8c4554;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 0 55px #d84e7020;
+  padding: 8px;
+  margin: 0 10px;
+  background: #1c0b0f;
+}
+#loveMap {
+  height: 68vh;
+  border-radius: 16px;
+  background: #1b1013;
+}
+.map-note {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  padding: 11px 15px;
+  background: #1b0b10dd;
+  border: 1px solid #713443;
+  border-radius: 30px;
+  color: #f6a1ae;
+  font-size: 12px;
+  z-index: 500;
+}
+.map__footer {
+  text-align: center;
+  color: #946c73;
+  padding: 30px 15px 45px;
+  font-size: 22px;
+}
+footer span {
+  color: var(--pink);
+}
+.leaflet-container {
+  background: #1c1115 !important;
+  font-family: Manrope, sans-serif;
+}
+.leaflet-control-zoom a {
+  background: #281117 !important;
+  color: #f6a0ae !important;
+  border-color: #69313b !important;
+}
+.heart-pin {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: #ff9eae;
+  font-size: 25px;
+  text-shadow:
+    0 0 8px #ff6b91,
+    0 0 22px #ff4778;
+  animation: pulse 1.8s infinite;
+}
+.heart-pin:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ff7190;
+  filter: blur(13px);
+  z-index: -1;
+}
+@keyframes pulse {
+  50% {
+    transform: scale(1.3);
+  }
+}
+.map__modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+.map__modal.open {
+  display: flex;
+}
+.map__modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #080305d9;
+  backdrop-filter: blur(9px);
+}
+.memory-card {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: linear-gradient(145deg, #2b1118, #16090c);
+  border: 1px solid #8a4352;
+  border-radius: 20px;
+  box-shadow: 0 20px 90px #0009;
+  animation: rise 0.25s ease;
+}
+.map__close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 14px;
+  top: 12px;
+  z-index: 2;
+  border: 1px solid #ffffff55;
+  background: #17090dcc;
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.memory-content {
+  padding: 25px 30px 30px;
+}
+.date {
+  color: #ef899a;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+.memory-content h2 {
+  font: italic 42px "Cormorant Garamond", serif;
+  margin: 8px 0 12px;
+}
+.memory-content p {
+  line-height: 1.8;
+  color: #d9bfc3;
+  white-space: pre-line;
+}
+.gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.gallery img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 9px;
+  border: 1px solid #713443;
+}
+
+.memory-video-wrapper {
+  width: 100%;
+  padding-bottom: 56.25%; /* Соотношение сторон 16:9 (9/16 = 0.5625) */
+  position: relative;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.memory-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 650px) {
+  .top {
+    padding: 0 18px;
+  }
+  .top span {
+    display: none;
+  }
+  .layout {
+    padding: 38px 13px;
+  }
+  .map-shell {
+    padding: 5px;
+    border-radius: 15px;
+  }
+  #loveMap {
+    height: 62vh;
+    min-height: 390px;
+  }
+  .memory-cover {
+    height: 210px;
+  }
+  .memory-content {
+    padding: 20px;
+  }
+  .memory-content h2 {
+    font-size: 34px;
+  }
+}
+
+.memory-thumb {
+  cursor: pointer;
+}
+
+.memory-thumb--active {
+  border-color: var(--pink);
+}
+.previe{
+  padding: 10px 20px;
+}
+
+.screen {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 16px;
+  padding: 4px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #222;
+  overflow: hidden;
+}
+
+.screen img {
+  
+  max-width: 100%;
+  max-height: 60vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.gallery img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.gallery img:hover {
+  transform: scale(1.08);
+}
+.gallery img.active {
+  border-color: #ffd53e;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+
+.map__modal .memory-card {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  max-height: 100vh;
+}

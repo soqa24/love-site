@@ -1,0 +1,160 @@
+.hero {
+  background: radial-gradient(ellipse at 50% 0, #35151c 0%, var(--bg) 55%);
+  background: var(--bg);
+  padding: 40px 0 0 0;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 30%;
+  border-radius: 50%;
+  width: 551px;
+  height: 551px;
+  background-color: var(--line);
+  opacity: 0.4;
+  filter: blur(220px);
+  z-index: 10;
+}
+.heart svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.hero__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #dca0a5;
+  font-size: 22px;
+  z-index: 100;
+  position: relative;
+}
+
+.hero__header--left {
+  display: flex;
+  align-items: center;
+}
+.hero__header--left svg {
+  width: 60px;
+}
+.hero__header--left--text {
+  margin-left: 12px;
+  white-space: nowrap;
+  font-size: 26px;
+}
+.hero__header--nav--btn {
+  display: inline-block;
+  align-items: center;
+  margin-right: 20px;
+  color: var(--soft);
+  padding: 0 3px 5px;
+  transition: all 0.3s;
+  z-index: 10;
+  font-size: 26px;
+}
+.hero__header--nav--btn:hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 170, 190, 0.45);
+}
+
+.hero__header--nav:last-child {
+  margin-right: 0;
+}
+
+.hero__active--btn {
+  border-bottom: 2px solid var(--line);
+}
+
+.hero__header--btn {
+  display: flex;
+  font-weight: 500;
+  padding: 3px 8px;
+  border: 2px solid var(--line);
+  border-radius: 50px;
+}
+.hero__header--btn:hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 170, 190, 0.45);
+  border: 2px solid #fff;
+}
+.hero__header--btn svg {
+  margin-right: 8px;
+}
+.hero__header--btn {
+  transition: all 0.3s;
+}
+
+/* ----------------------------------- */
+.hero__content {
+  display: flex;
+  padding: 130px 0 120px;
+}
+
+.hero__content--img {
+  width: 50%;
+}
+
+.hero__content--img img {
+  border: 3px solid var(--line);
+  border-radius: 30px;
+}
+
+.hero__content--main {
+  width: 50%;
+}
+.hero__content--main--title {
+  display: flex;
+  align-items: center;
+}
+.hero__content--main--title svg {
+  margin-left: 20px;
+  width: 90px;
+  height: 90px;
+}
+.hero__content--main--title--Love {
+  font-size: 80px;
+  margin-right: 10px;
+  font-family: "Great Vibes", serif;
+  font-weight: 200;
+}
+.love-underline {
+  opacity: 0;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  animation: drawLeftToRight 4s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes drawLeftToRight {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  24.6% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+  65.6% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+  75.4% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 0;
+  }
+  75.401%,
+  100% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    opacity: 0;
+  }
+}
+
+.hero__content--main--descr--text {
+  display: flex;
+  font-size: 32px;
+  line-height: 150%;
+}

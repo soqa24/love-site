@@ -1,0 +1,209 @@
+@media (max-width: 1441px) {
+  .hero__conten-main--descr,
+  .hero__content--main svg {
+    max-width: 550px;
+  }
+}
+@media (max-width: 1025px) {
+  .hero__content--main--title--Love {
+    font-size: 82px;
+  }
+  .hero__content {
+    padding: 100px 0 60px;
+  }
+  .hero__content--main--title--Love {
+    font-size: 72px;
+  }
+}
+@media (max-width: 992px) {
+  .hero__content {
+    display: block;
+    justify-items: center;
+    text-align: center;
+  }
+  .hero__content--img {
+    justify-content: center;
+    display: flex;
+  }
+  .hero__content--main {
+    width: 100%;
+    justify-items: center;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .hero__content {
+    padding: 60px 0 40px;
+  }
+  .hero__content--main--title--Love {
+    font-size: 48px;
+  }
+  .hero__content--main--descr--text {
+    font-size: 26px;
+  }
+}
+@media (max-width: 390px) {
+  .hero__content--img img {
+    height: 400px;
+  }
+}
+/* slider-camera */
+
+@media (max-width: 1200px) {
+  .slider-camera-plate {
+    width: 350px;
+    height: 250px;
+    left: 0%;
+  }
+  .slider-camera-plate-vinyl {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-camera {
+    padding: 50px 0 100px;
+  }
+  .slider-camera-plate {
+    width: 350px;
+    height: 250px;
+    left: 8%;
+  }
+  .slider-camera-plate-vinyl {
+    height: 200px;
+  }
+}
+@media (max-width: 576px) {
+  .camera-caption {
+    display: block;
+  }
+  .camera-caption p {
+    margin-bottom: 8px;
+  }
+}
+
+/* Факты о любви */
+@media (max-width: 1200px) {
+  .love-facts--list-item-title {
+    font-size: 34px;
+  }
+  .love-facts--list-item-descr {
+    font-size: 22px;
+  }
+}
+@media (max-width: 992px) {
+  .love-facts {
+    padding: 50px 0 60px;
+  }
+  .love-facts:after {
+    width: 300px;
+    height: 300px;
+    top: -3%;
+    left: 33%;
+    filter: blur(100px);
+  }
+  .love-facts--content {
+    display: block;
+    justify-items: center;
+  }
+  .love-facts--content--list2 {
+    margin-top: 20px;
+  }
+  .love-facts--list-item {
+    width: 490px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .love-facts:after {
+    width: 200px;
+    height: 200px;
+    top: -1%;
+    left: 26%;
+    filter: blur(60px);
+  }
+  .love-facts--title-header--title {
+    font-size: 48px;
+  }
+  .love-facts--list-item {
+    display: block;
+    width: 342px;
+    padding: 0px 10px 10px 10px;
+  }
+  .love-facts--list-item-title {
+    font-size: 28px;
+  }
+  .love-facts--list-item-descr {
+    font-size: 18px;
+  }
+}
+@media (max-width: 390px) {
+  .love-facts {
+    padding:;
+  }
+  .love-facts--title-header--title {
+    font-size: 36px;
+  }
+  .love-facts--list-item {
+    width: 292px;
+    padding: 0px 7px 8px 8px;
+  }
+  .love-facts--list-item svg {
+    width: 40px;
+    height: 40px;
+  }
+  .love-facts--list-item-title {
+    font-size: 24px;
+  }
+  .love-facts--list-item-descr {
+    font-size: 15px;
+  }
+}
+/* --------map love---------------- */
+@media (max-width: 1440px) {
+  .map {
+    padding: 120px 0 0 0 !important;
+  }
+}
+@media (max-width: 992px) {
+  .map-shell #loveMap {
+    height: 430px;
+  }
+  .map .map__footer {
+    font-size: 16px;
+  }
+  .memory-content {
+    padding: 0px 20px 30px;
+  }
+}
+@media (max-width: 768px) {
+  .map {
+    padding: 60px 0 0 0 !important;
+  }
+}
+@media (max-width: 576px) {
+  .map-shell #loveMap {
+    height: 330px;
+  }
+  .map .map__top {
+    display: block;
+    justify-content: center;
+    text-align: center;
+  }
+  .brand {
+    display: block;
+  }
+}
+@media (max-width: 390px) {
+  .map-shell #loveMap {
+    height: 230px;
+  }
+}
+/* letter-future */
+@media (max-width: 576px) {
+  .letter-future {
+  padding: 60px 0 30px;
+}
+}
+
