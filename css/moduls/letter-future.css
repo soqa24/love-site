@@ -48,6 +48,31 @@
   min-width: 0;
 }
 
+.letter-future__input[type="datetime-local"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.letter-future__hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+/* попытка усилить */
+.letter-future__form--opened,
+.letter-future__form--writed {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.letter-future__input,
+.letter-future__textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
 /*  */
 .letter-future__input {
   font-size: 18px;
