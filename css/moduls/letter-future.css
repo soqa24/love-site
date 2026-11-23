@@ -31,6 +31,31 @@
   text-align: start;
   margin-bottom: 16px;
 }
+
+/* попытка */
+/* Страховка: контейнер не выходит за экран */
+.letter-future__form__container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* обрезает всё, что всё-таки вылезло */
+}
+
+/* Инпут и textarea — строго в границах родителя */
+.letter-future__input,
+.letter-future__textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0; /* снимает минимальную ширину во flex-родителе */
+}
+
+/* Инпуты даты: у них есть внутренний размер браузера — сбрасываем */
+.letter-future__input[type="datetime-local"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+/*  */
 .letter-future__input {
   font-size: 22px;
   color: var(--soft);
