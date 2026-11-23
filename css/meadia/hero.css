@@ -32,7 +32,7 @@
   }
 }
 @media (max-width: 576px) {
-  .hero__content--img img{
+  .hero__content--img img {
     width: 300px;
     height: 400px;
   }
@@ -47,7 +47,7 @@
   }
 }
 @media (max-width: 390px) {
-  .hero__content--img img{
+  .hero__content--img img {
     width: 200px;
     height: 300px;
   }
@@ -87,13 +87,13 @@
   }
 }
 @media (max-width: 415px) {
-  .camera-controls{
+  .camera-controls {
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  .film-progress{
+  .film-progress {
     display: none;
   }
 }
@@ -121,8 +121,9 @@
     display: block;
     justify-items: center;
   }
-  .love-facts--content--list2 {
-    margin-top: 20px;
+  .love-facts--content--list {
+    grid-template-columns: 1fr;
+    justify-items: center
   }
   .love-facts--list-item {
     max-width: 490px;
@@ -215,7 +216,6 @@
 /* letter-future */
 @media (max-width: 576px) {
   .letter-future {
-  padding: 60px 0 30px;
+    padding: 60px 0 30px;
+  }
 }
-}
-
