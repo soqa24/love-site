@@ -103,8 +103,6 @@
 
 .hero__content--img img {
   display: block;
-  width: 100%;
-  height: auto;
   border: 3px solid var(--line);
   border-radius: 30px;
   object-fit: cover;
