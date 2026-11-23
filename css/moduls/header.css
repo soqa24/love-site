@@ -94,9 +94,8 @@
 
 .hero__content--img {
   width: 50%;
-  overflow: hidden; /* ВАЖНО: обрезает всё, что вылезает за скругления */
-  box-sizing: border-box; /* Рамка входит в ширину, а не добавляет её */
-  margin: 0 auto; /* Центрирование самого блока с фото */
+  box-sizing: border-box;
+  margin: 0 auto; 
 }
 
 .hero__content--img img {
