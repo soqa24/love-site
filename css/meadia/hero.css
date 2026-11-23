@@ -51,9 +51,6 @@
     width: 200px;
     height: 300px;
   }
-  .hero__content--img img {
-    height: 400px;
-  }
 }
 /* slider-camera */
 
@@ -95,6 +92,9 @@
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+  }
+  .film-progress{
+    display: none;
   }
 }
 /* Факты о любви */

@@ -33,6 +33,7 @@ const memories = [
     lng: 48.491384,
     story:
       "Мы гуляли без маршрута, разговаривали обо всём и никуда не торопились. Один из тех дней, которые остаются прямо в сердечке",
+      cover: ["./images/map/id2/id1.1.jpg"],
     videos: ["./video/first-dance.mp4"],
     photos: [
         "./images/map/id2/id1.1.jpg",
@@ -403,14 +404,13 @@ const heartIcon = L.divIcon({
 // Модалка, экран и галерея
 const modal = document.getElementById("memoryModal");
 const screen = document.getElementById("screen");
-const display = document.getElementById("display"); // <img> на экране
+const display = document.getElementById("display");
 const gallery = document.getElementById("gallery");
 
-// В экране будет и картинка, и видео — включаем нужное
 const screenVideo = document.createElement("video");
 screenVideo.controls = true;
 screenVideo.playsInline = true;
-screenVideo.preload = "none"; // ← не качать видео до нажатия play
+screenVideo.preload = "none";
 screenVideo.style.maxWidth = "100%";
 screenVideo.style.maxHeight = "60vh";
 screenVideo.style.display = "none";
@@ -432,7 +432,6 @@ function showVideo(src) {
   screenVideo.src = src;
 }
 
-// Остановить видео на экране (при закрытии модалки)
 function stopScreenVideo() {
   screenVideo.pause();
 }
@@ -472,7 +471,6 @@ function openMemory(m) {
       el.decoding = "async"; 
       el.alt = m.title; // описание фото — заголовок воспоминания
     } else {
-      // ЭТОТ БЛОК ИСПРАВЛЯЕТ ПРОБЛЕМУ:
       const ytId = getYouTubeId(item.src);
 
       if (ytId) {
