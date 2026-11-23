@@ -32,6 +32,10 @@
   }
 }
 @media (max-width: 576px) {
+  .hero__content--img img{
+    width: 300px;
+    height: 400px;
+  }
   .hero__content {
     padding: 60px 0 40px;
   }
@@ -43,6 +47,10 @@
   }
 }
 @media (max-width: 390px) {
+  .hero__content--img img{
+    width: 200px;
+    height: 300px;
+  }
   .hero__content--img img {
     height: 400px;
   }
@@ -81,7 +89,14 @@
     margin-bottom: 8px;
   }
 }
-
+@media (max-width: 415px) {
+  .camera-controls{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
 /* Факты о любви */
 @media (max-width: 1200px) {
   .love-facts--list-item-title {
