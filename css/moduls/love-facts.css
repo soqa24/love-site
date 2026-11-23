@@ -114,31 +114,16 @@
   box-shadow: 0 10px 30px var(--pink);
 }
 
-/* @media (max-width: 992px) {
-  .love-facts--list-item:nth-child(1) { order: 1; }
-  .love-facts--list-item:nth-child(5) { order: 2; }
-  .love-facts--list-item:nth-child(6) { order: 3; }
-  .love-facts--list-item:nth-child(2) { order: 4; }
-  .love-facts--list-item:nth-child(3) { order: 5; }
-  .love-facts--list-item:nth-child(4) { order: 6; }
-  .love-facts--list-item:nth-child(7) { order: 7; }
-  .love-facts--list-item:nth-child(8) { order: 8; }
-} */
-
-/* На экранах от 992px до 1200px: 1 колонка, вертикальный список */
 @media (min-width: 992px) and (max-width: 1200px) {
   .love-facts--content {
-    grid-template-columns: 1fr; /* Одна колонка на всю ширину */
-    align-items: stretch;       /* Карточки одной высоты */
+    grid-template-columns: 1fr;
+    align-items: stretch; 
   }
-
-  /* Убираем любые order-перестановки, чтобы порядок был строго по HTML */
   .love-facts--list-item {
     order: 0; 
   }
 }
 
-/* На мобильных (< 992px) тоже 1 колонка (это у тебя уже было, но для надежности) */
 @media (max-width: 991px) {
   .love-facts--content {
     grid-template-columns: 1fr;
