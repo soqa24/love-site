@@ -125,7 +125,7 @@
     margin-top: 20px;
   }
   .love-facts--list-item {
-    width: 490px;
+    max-width: 490px;
     justify-content: center;
     text-align: center;
   }
