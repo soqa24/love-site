@@ -33,31 +33,24 @@
 }
 
 /* попытка */
-/* Страховка: контейнер не выходит за экран */
 .letter-future__form__container {
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
-  overflow: hidden; /* обрезает всё, что всё-таки вылезло */
+  overflow: hidden; 
 }
 
-/* Инпут и textarea — строго в границах родителя */
 .letter-future__input,
 .letter-future__textarea {
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
-  min-width: 0; /* снимает минимальную ширину во flex-родителе */
+  min-width: 0;
 }
 
-/* Инпуты даты: у них есть внутренний размер браузера — сбрасываем */
-.letter-future__input[type="datetime-local"] {
-  -webkit-appearance: none;
-  appearance: none;
-}
 /*  */
 .letter-future__input {
-  font-size: 22px;
+  font-size: 18px;
   color: var(--soft);
   padding: 10px 20px;
   background: var(--panel);
