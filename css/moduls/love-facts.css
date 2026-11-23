@@ -43,6 +43,7 @@
 .love-facts--list-item {
   display: flex;
   align-items: center;
+  width: 100%;
   border: 2px solid var(--line);
   border-radius: 100px;
   padding: 10px 20px;
