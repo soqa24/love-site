@@ -13,18 +13,18 @@ loveFacts();
 const BASE = import.meta.env.BASE_URL;
 // ─────────────────────────────────────────────
 const memories = [
-  // {
-  //   id: 1,
-  //   title: "Место с которого все началось",
-  //   date: "25 марта 2024",
-  //   lat: 56.757789,
-  //   lng: 48.479497,
-  //   story:
-  //     "Я немного волновался, но после нашего поцелуя этот вечер я вспоминаю каждый день)",
-  //      photos: [
-  //       "./images/map/id1/id1.1.jpg",
-  //   ],
-  // },
+  {
+    id: 1,
+    title: "Место с которого все началось",
+    date: "25 марта 2024",
+    lat: 56.757789,
+    lng: 48.479497,
+    story:
+      "Я немного волновался, но после нашего поцелуя этот вечер я вспоминаю каждый день)",
+       photos: [
+        "./images/map/id1/id1.1.jpg",
+    ],
+  },
   {
     id: 2,
     title: "Первое видео вместе",
@@ -75,7 +75,6 @@ const memories = [
     lng: 48.463292, 
     story:
       "Наш выпускной, на котором, моя звёздочка сияла ярчке свех (звёздочка - ты, если что)",
-    videos: [""],
     photos: [
       "./images/map/id5/id5.1.jpg",
       "./images/map/id5/id5.2.jpg",
@@ -190,10 +189,10 @@ const memories = [
     story:
       "Мне очень нравиться изучать новые места с тобой, моё солнышко",
       videos: [
-      "./images/map/id12/id12.1.video.mp4",
-      "./images/map/id12/id12.2.video.mp4",
-      "./images/map/id12/id12.3.video.mp4",
-      "./images/map/id121/id12.4.video.mp4",
+      "./images/map/id12/id12.1.mp4",
+      "./images/map/id12/id12.2.mp4",
+      "./images/map/id12/id12.3.mp4",
+      "./images/map/id12/id12.4.mp4",
     ],
   },
   {
@@ -348,7 +347,7 @@ const memories = [
         "./images/map/id23/id23.5.jpg",
       ],
       videos: [
-      "./images/map/id23/id23.video.mp4",
+      "./images/map/id23/id23video.mp4",
       ],
   },
   {
@@ -378,6 +377,7 @@ const memories = [
         "./images/map/id25/id25.1.jpg",
         "./images/map/id25/id25.2.jpg",
         "./images/map/id25/id25.3.jpg",
+        
       ],
   },
 ];
@@ -410,7 +410,7 @@ const gallery = document.getElementById("gallery");
 const screenVideo = document.createElement("video");
 screenVideo.controls = true;
 screenVideo.playsInline = true;
-screenVideo.preload = "none";
+screenVideo.preload = "metadata";
 screenVideo.style.maxWidth = "100%";
 screenVideo.style.maxHeight = "60vh";
 screenVideo.style.display = "none";
@@ -424,13 +424,54 @@ function showPhoto(src) {
   display.src = src;
 }
 
-// Показать видео на экране
 function showVideo(src) {
   display.hidden = true;
   screenVideo.style.display = "block";
-  screenVideo.poster = src.replace(/\.mp4$/i, ".jpg");
   screenVideo.src = src;
+  createVideoThumb(src, (thumb) => {
+    screenVideo.poster = thumb || src.replace(/\.mp4$/i, ".jpg");
+  });
 }
+
+// --- Генерация первого кадра локальных видео ---
+const videoThumbs = new Map(); // кэш: src -> dataURL
+
+function createVideoThumb(src, callback) {
+  if (videoThumbs.has(src)) { callback(videoThumbs.get(src)); return; }
+
+  const v = document.createElement("video");
+  v.muted = true;
+  v.playsInline = true;
+  v.preload = "metadata";
+  v.src = src;
+
+  const grab = () => {
+    v.removeEventListener("seeked", grab);
+    v.removeEventListener("error", onError);
+    try {
+      const c = document.createElement("canvas");
+      c.width = 320; // ширина превью, на качество экрана не влияет
+      c.height = v.videoWidth ? Math.round(320 * (v.videoHeight / v.videoWidth)) : 180;
+      c.getContext("2d").drawImage(v, 0, 0, c.width, c.height);
+      const url = c.toDataURL("image/jpeg", 0.7);
+      videoThumbs.set(src, url);
+      callback(url);
+    } catch (e) {
+      callback(null); // canvas испорчен — вернём заглушку
+    }
+    v.removeAttribute("src");
+  };
+
+  const onError = () => {
+    v.removeEventListener("seeked", grab);
+    callback(null);
+  };
+
+  v.addEventListener("loadeddata", () => { v.currentTime = 0.1; });
+  v.addEventListener("seeked", grab);
+  v.addEventListener("error", onError);
+}
+
 
 function stopScreenVideo() {
   screenVideo.pause();
@@ -450,6 +491,11 @@ function openMemory(m) {
   document.getElementById("story").textContent = m.story;
 
   const items = getItems(m);
+
+  items
+  .filter((it) => it.type === "video" && !getYouTubeId(it.src))
+  .forEach((it) => createVideoThumb(it.src, () => {}));
+
 
   function getYouTubeId(src) {
     const m = src.match(
@@ -479,18 +525,21 @@ function openMemory(m) {
         el.src = `https://img.youtube.com/vi/\${ytId}/hqdefault.jpg`;
           el.loading = "lazy";
       } else {
-  
+  el = document.createElement("img");
+  el.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E`;
+  el.style.background = "#333";
+  el.style.objectFit = "contain";
+  el.style.padding = "10px";
+  createVideoThumb(item.src, (thumb) => {
+    if (thumb) {
+      el.src = thumb;
+      el.style.background = "";
+      el.style.objectFit = "";
+      el.style.padding = "";
+    }
+  });
+}
 
-        el = document.createElement("img");
-
-        el.src =
-        el.loading = "lazy";
-          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E";
-        el.style.background = "#333"; // Темный фон под треугольником
-        el.style.objectFit = "contain";
-        el.style.padding = "10px";
-        
-      }
     }
 
     el.dataset.src = item.src;
