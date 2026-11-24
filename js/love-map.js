@@ -9,6 +9,9 @@ initBurger();
 initLetterFuture();
 loveFacts();
 // ─────────────────────────────────────────────
+
+
+import L from "leaflet";
 // Данные воспоминаний
 const BASE = import.meta.env.BASE_URL;
 // ─────────────────────────────────────────────
@@ -513,9 +516,9 @@ function openMemory(m) {
     if (item.type === "photo") {
       el = document.createElement("img");
       el.src = srcForDisplay;
-      el.loading = "lazy";       // <-- ЭТО САМОЕ ВАЖНОЕ ДЛЯ СКОРОСТИ
+      el.loading = "lazy";
       el.decoding = "async"; 
-      el.alt = m.title; // описание фото — заголовок воспоминания
+      el.alt = m.title;
     } else {
       const ytId = getYouTubeId(item.src);
 

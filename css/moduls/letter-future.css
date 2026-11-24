@@ -47,11 +47,6 @@
   max-width: 100%;
   min-width: 0;
 }
-
-/* .letter-future__input[type="datetime-local"] {
-  -webkit-appearance: none;
-  appearance: none;
-} */
 .letter-future__hint {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.45);

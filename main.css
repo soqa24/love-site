@@ -1,12 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap");
-@import "./css/moduls/header.css";
+@import "./css/reset.css";
+@import "leaflet/dist/leaflet.css";
 @import "./css/moduls/bg-hearts.css";
 @import "./css/fonts.css";
 @import "./css/moduls/burger.css";
-@import "./css/moduls/slider-camera.css";
+@import "./css/moduls/header.css";
 @import "./css/moduls/love-facts.css";
+@import "./css/moduls/slider-camera.css";
 @import "./css/moduls/letter-future.css";
 @import "./css/meadia/hero.css";
+
 
 :root {
   --bg: #130809;
