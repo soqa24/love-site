@@ -109,22 +109,4 @@
 .mobile-menu--link:hover{
     color: #fff;
 }
-@media (max-width: 992px) {
-  
-  .hero__header--right {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
-  .burger {
-    display: flex;
-  }
-  .hero__header--nav--btn {
-    display: none;
-  }
-}
-@media (max-width: 576px) {
-  .hero__header--right{
-    display: none;
-  }
-}
+
