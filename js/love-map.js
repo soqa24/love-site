@@ -25,7 +25,7 @@ const memories = [
     story:
       "Я немного волновался, но после нашего поцелуя этот вечер я вспоминаю каждый день)",
        photos: [
-        "./images/map/id1/id1.1.jpg",
+        "./images/map/id1/id1.1.webp",
     ],
   },
   {
@@ -36,11 +36,11 @@ const memories = [
     lng: 48.491384,
     story:
       "Мы гуляли без маршрута, разговаривали обо всём и никуда не торопились. Один из тех дней, которые остаются прямо в сердечке",
-      cover: ["./images/map/id2/id1.1.jpg"],
+      // cover: ["./images/map/id2/id1.1.we"],
     videos: ["./video/first-dance.mp4"],
     photos: [
-        "./images/map/id2/id1.1.jpg",
-        "./images/map/id2/id1.2.jpg",
+        "./images/map/id2/id1.1.webp",
+        "./images/map/id2/id1.2.webp",
       ],
   },
   {
@@ -53,7 +53,7 @@ const memories = [
       "Наш самый прекрасный и незабываемый, засчёт твоей красоты последний звонок",
     videos: ["./images/map/id3/id3.video.mp4"],
     photos: [
-      "./images/map/id3/id.3.1.jpg",
+      "./images/map/id3/id.3.1.webp",
     ],
   },
   {
@@ -65,9 +65,9 @@ const memories = [
     story:
       "Тот же самый звонок, только у фонтана)))",
     photos: [
-      "./images/map/id4/id4.2.jpg",
-      "./images/map/id4/id4.1.jpg",
-      "./images/map/id3/id3.3.jpg",
+      "./images/map/id4/id4.2.webp",
+      "./images/map/id4/id4.1.webp",
+      "./images/map/id3/id3.3.webp",
     ],
   },
   {
@@ -79,11 +79,10 @@ const memories = [
     story:
       "Наш выпускной, на котором, моя звёздочка сияла ярчке свех (звёздочка - ты, если что)",
     photos: [
-      "./images/map/id5/id5.1.jpg",
-      "./images/map/id5/id5.2.jpg",
-      "./images/map/id5/id5.3.jpg",
-      "./images/map/id5/id5.4.jpg",
-      "./images/map/id5/id5.5.jpg",
+      "./images/map/id5/id5.1.webp",
+      "./images/map/id5/id5.2.webp",
+      "./images/map/id5/id5.3.webp",
+      "./images/map/id5/id5.4.webp",
     ],
   },
   {
@@ -123,11 +122,11 @@ const memories = [
     story:
       "Небольшая фотоссесия для моего распускающегося цветочка",
     photos: [
-        "./images/map/id8/id8.1.jpg",
-        "./images/map/id8/id8.2.jpg",
-        "./images/map/id8/id8.3.jpg",
-        "./images/map/id8/id8.4.jpg",
-        "./images/map/id8/id8.5.jpg",
+        "./images/map/id8/id8.1.webp",
+        "./images/map/id8/id8.2.webp",
+        "./images/map/id8/id8.3.webp",
+        "./images/map/id8/id8.4.webp",
+        "./images/map/id8/id8.5.webp",
       ],
   },
   {
@@ -143,8 +142,8 @@ const memories = [
       "./images/map/id9/id9.2video.mp4",
     ],
     photos: [
-        "./images/map/id9/id9.1.jpg",
-        "./images/map/id9/id9.2.jpg",
+        "./images/map/id9/id9.1.webp",
+        "./images/map/id9/id9.2.webp",
       ],
   },
   {
@@ -159,8 +158,8 @@ const memories = [
       "./images/map/id10/id10.video.mp4",
     ],
     photos: [
-        "./images/map/id10/id10.1.jpg",
-        "./images/map/id10/id10.2.jpg",
+        "./images/map/id10/id10.1.webp",
+        "./images/map/id10/id10.2.webp",
       ],
   },
   {
@@ -172,15 +171,15 @@ const memories = [
     story:
       "Мне очень нравиться изучать новые места с тобой, моё солнышко",
     photos: [
-        "./images/map/id11/id11.1.jpg",
-        "./images/map/id11/id11.2.jpg",
-        "./images/map/id11/id11.3.jpg",
-        "./images/map/id11/id11.4.jpg",
-        "./images/map/id11/id11.5.jpg",
-        "./images/map/id11/id11.6.jpg",
-        "./images/map/id11/id11.7.jpg",
-        "./images/map/id11/id11.8.jpg",
-        "./images/map/id11/id11.9.jpg",
+        "./images/map/id11/id11.1.webp",
+        "./images/map/id11/id11.2.webp",
+        "./images/map/id11/id11.3.webp",
+        "./images/map/id11/id11.4.webp",
+        "./images/map/id11/id11.5.webp",
+        "./images/map/id11/id11.6.webp",
+        "./images/map/id11/id11.7.webp",
+        "./images/map/id11/id11.8.webp",
+        "./images/map/id11/id11.9.webp",
       ],
   },
   {
@@ -207,9 +206,9 @@ const memories = [
     story:
       "Было очень приятно так посидеть с тобой, вкусно покушать",
       photos: [
-        "./images/map/id13/id13.1.jpg",
-        "./images/map/id13/id13.2.jpg",
-        "./images/map/id13/id13.3.jpg",
+        "./images/map/id13/id13.1.webp",
+        "./images/map/id13/id13.2.webp",
+        "./images/map/id13/id13.3.webp",
       ],
   },
   {
@@ -233,7 +232,7 @@ const memories = [
     story:
       "Прекрасное место, для того чтобы выпить настолько же горячего кофе как ты)",
       photos: [
-        "./images/map/id15/id15.1.jpg",
+        "./images/map/id15/id15.1.webp",
       ],
   },
   {
@@ -245,11 +244,11 @@ const memories = [
     story:
       "В этот день, мы очень классно поболтали и провели вечер вместе",
       photos: [
-        "./images/map/id16/id16.1.jpg",
-        "./images/map/id16/id16.2.jpg",
-        "./images/map/id16/id16.3.jpg",
-        "./images/map/id16/id16.4.jpg",
-        "./images/map/id16/id16.5.jpg",
+        "./images/map/id16/id16.1.webp",
+        "./images/map/id16/id16.2.webp",
+        "./images/map/id16/id16.3.webp",
+        "./images/map/id16/id16.4.webp",
+        "./images/map/id16/id16.5.webp",
       ],
   },
   {
@@ -261,9 +260,9 @@ const memories = [
     story:
       "Было очень классно, жаде в учет того, что ничего особенного не было, ведь весь вайб задаешь ты. Главное, чтобы ты была и тогда день получиться на все 100%",
       photos: [
-        "./images/map/id17/id17.1.jpg",
-        "./images/map/id17/id17.2.jpg",
-        "./images/map/id17/id17.3.jpg",
+        "./images/map/id17/id17.1.webp",
+        "./images/map/id17/id17.2.webp",
+        "./images/map/id17/id17.3.webp",
       ],
   },
   {
@@ -275,8 +274,8 @@ const memories = [
     story:
       "Безумно вайбовые покатушки с любимой на катамаранах",
       photos: [
-        "./images/map/id18/id18.1.jpg",
-        "./images/map/id18/id18.2.jpg",
+        "./images/map/id18/id18.1.webp",
+        "./images/map/id18/id18.2.webp",
       ],
   },
   {
@@ -300,7 +299,7 @@ const memories = [
     story:
       "Наша Любимая хинкальня",
       photos: [
-        "./images/map/id20/id20.1.jpg",
+        "./images/map/id20/id20.1.webp",
       ],
       videos: [
       "./images/map/id20/id20.video.mp4",
@@ -315,11 +314,11 @@ const memories = [
     story:
       "Фотосессия, на которой я показывал всю свою любовь к тебе одним лишь взглядом",
       photos: [
-        "./images/map/id21/id21.1.jpg",
-        "./images/map/id21/id21.2.jpg",
-        "./images/map/id21/id21.3.jpg",
-        "./images/map/id21/id21.4.jpg",
-        "./images/map/id21/id21.5.jpg",
+        "./images/map/id21/id21.1.webp",
+        "./images/map/id21/id21.2.webp",
+        "./images/map/id21/id21.3.webp",
+        "./images/map/id21/id21.4.webp",
+        "./images/map/id21/id21.5.webp",
       ],
   },
   {
@@ -331,7 +330,7 @@ const memories = [
     story:
       "Я каждый раз влюблялся в тебя, после того как видел как ты обращаешься с Юми, ведь добрый человек также по доброму относиться к животным",
       photos: [
-        "./images/map/id22/id22.jpg",
+        "./images/map/id22/id22.webp",
       ],
   },
   {
@@ -343,11 +342,11 @@ const memories = [
     story:
       "Здесь я снова убедился, что ты у меня самая красивая и нет никого, ктобы был красивей тебя. Целую)",
       photos: [
-        "./images/map/id23/id23.1.jpg",
-        "./images/map/id23/id23.2.jpg",
-        "./images/map/id23/id23.3.jpg",
-        "./images/map/id23/id23.4.jpg",
-        "./images/map/id23/id23.5.jpg",
+        "./images/map/id23/id23.1.webp",
+        "./images/map/id23/id23.2.webp",
+        "./images/map/id23/id23.3.webp",
+        "./images/map/id23/id23.4.webp",
+        "./images/map/id23/id23.5.webp",
       ],
       videos: [
       "./images/map/id23/id23video.mp4",
@@ -362,10 +361,10 @@ const memories = [
     story:
       "Это была самая замечательная неделя отдыха вместе",
       photos: [
-        "./images/map/id24/id24.1.jpg",
-        "./images/map/id24/id24.2.jpg",
-        "./images/map/id24/id24.3.jpg",
-        "./images/map/id24/id24.4.jpg",
+        "./images/map/id24/id24.1.webp",
+        "./images/map/id24/id24.2.webp",
+        "./images/map/id24/id24.3.webp",
+        "./images/map/id24/id24.4.webp",
       ],
   },
   {
@@ -377,9 +376,9 @@ const memories = [
     story:
       "Это мини-путишествия остануться у меня в памяти навсегда",
       photos: [
-        "./images/map/id25/id25.1.jpg",
-        "./images/map/id25/id25.2.jpg",
-        "./images/map/id25/id25.3.jpg",
+        "./images/map/id25/id25.1.webp",
+        "./images/map/id25/id25.2.webp",
+        "./images/map/id25/id25.3.webp",
         
       ],
   },
